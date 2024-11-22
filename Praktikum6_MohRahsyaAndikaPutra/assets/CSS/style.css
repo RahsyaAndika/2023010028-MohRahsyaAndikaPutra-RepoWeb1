@@ -1,44 +1,56 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
+  font-family: sans-serif;
+  margin: 0;
 }
 
 header {
-    background-color: lightblue;
-    padding: 20px;
+  background-color: rgb(116, 191, 216);
+  padding: 10px;
+  text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.logo {
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
-
-nav li {
-    display: inline-block;
+.polibanglogo{
     margin-right: 20px;
 }
 
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
 main {
-    display: flex;
-    padding: 20px;
+  display: flex;
+  padding: 20px;
 }
 
 .content {
-    background-color: lightyellow;
-    flex: 2;
-    padding: 20px;
+  background-color: rgb(73, 189, 158);
+  flex: 2;
+  padding: 20px;
 }
 
 .sidebar {
-    background-color: orange;
-    flex: 1;
-    padding: 20px;
-    margin-left: 20px;
+  background-color: rgb(124, 171, 16);
+  flex: 1;
+  padding: 20px;
+  margin-left: 20px;
 }
 
 footer {
-    background-color: lightgray;
-    padding: 20px;
-    text-align: center;
+  background-color: rgb(123, 73, 148);
+  padding: 20px;
+  text-align: center;
 }
