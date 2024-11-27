@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; 
+    background-color: rgb(73, 189, 158);
+}
+
+header {
+    background-color: rgba(255, 169, 39, 0.608);
+    background-image: url('images/header-image.jpg');
+    background-size: cover;
+    background-position: center; 
+    color: #001195;
+    text-align: center;
+    padding: 60px 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+nav {
+    background-color: rgb(116, 191, 216);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #5e5a5a;
+}
+
+footer {
+    background-color: rgb(116, 191, 216);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px; 
+    margin: auto;
+}
+
+.profile-info {
+    display: flex; 
+    align-items: center; 
+    margin: 20px 0; 
+}
+
+.profile-photo {
+    max-width: 250px; 
+    border-radius: 8px; 
+    margin-right: 20px; 
+}
+
+.bio-details p {
+    margin: 5px 0; 
+}
+
+.imgClub {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    margin-top: 20px; 
+}
+
+.imgClub a, img {
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.mobil-list {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    margin-top: 20px; 
+}
+
+.mobil-item {
+    text-align: center; 
+    margin: 10px; 
+    width: 200px; 
+}
+
+.mobil-item img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px; 
+}
+
+label {
+    display: block; 
+    margin: 10px 0 5px; 
+    color: #333;
+}
+
+button{
+    background-color: rgb(98, 238, 79);
+}
+
+button:hover{
+    background-color: rgb(15, 116, 15);
+}
+
+input[type="submit"] {
+    background-color: rgb(98, 238, 79);
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(15, 116, 15);
+}
+
+#login-form {
+    display: none; 
+    margin-top: 20px; 
+    padding: 20px;
+    background-color: rgb(124, 171, 16); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
