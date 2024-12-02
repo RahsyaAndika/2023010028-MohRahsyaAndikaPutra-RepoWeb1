@@ -1,24 +1,27 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6; 
     background-color: rgb(73, 189, 158);
 }
 
+.girassol-regular {
+    font-family: "Girassol", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
 header {
-    background-color: rgba(255, 169, 39, 0.608);
-    background-image: url('images/header-image.jpg');
-    background-size: cover;
-    background-position: center; 
-    color: #001195;
+    background-color: rgb(124, 171, 16);
+    color: ivory;
     text-align: center;
-    padding: 60px 20px; 
+    padding: 30px 20px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
 }
 
 nav {
-    background-color: rgb(116, 191, 216);
+    background-color: rgb(177, 0, 165);
     padding: 10px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
@@ -36,10 +39,10 @@ nav a:hover {
 }
 
 footer {
-    background-color: rgb(116, 191, 216);
+    background-color: rgb(187, 0, 174);
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 8px;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -120,7 +123,23 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: rgb(15, 116, 15);
 }
+.home{
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    margin-top: 20px; 
+}
 
+.home-item {
+    text-align: center; 
+    margin: 10px; 
+    width: 300px; 
+}
+.home-item img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 8px; 
+}
 #login-form {
     display: none; 
     margin-top: 20px; 
@@ -129,4 +148,14 @@ input[type="submit"]:hover {
     border-radius: 10px; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
 }
-
+#register-form {
+    display: none; 
+    margin-top: 20px; 
+    padding: 20px;
+    background-color: rgb(124, 171, 16); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+.form-container {
+    margin-top: 20px;
+}

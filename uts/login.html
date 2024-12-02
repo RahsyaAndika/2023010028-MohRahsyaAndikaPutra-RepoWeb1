@@ -1,41 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/script.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>Silahkan Login Terlebih Dahulu</h1>
+      <h1>Silahkan Login Terlebih Dahulu</h1>
     </header>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="profil.html">About Me</a>
-        <a href="konten.html">Konten</a>
-        <a href="picture.html">Picture</a>
-        <a href="login.html">Login</a>
+      <a href="index.html">Home</a>
+      <a href="profil.html">About Me</a>
+      <a href="konten.html">Konten</a>
+      <a href="picture.html">Picture</a>
+      <a href="Alam.html">AlamKu</a>
+      <a href="login.html">Login</a>
     </nav>
     <div class="container">
-        <h2>Form Login</h2>
-        <button onclick="toggleForm()">Login??</button>
-        <div id="login-form">
-            <form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                
-                <input type="submit" value="Login">
-            </form>
-        </div>
+      <h2>Form Login</h2>
+      <button onclick="toggleForm('login')">Login</button>
+      <button onclick="toggleForm('register')">Registrasi</button>
+  
+      <div id="login-form" class="form-container" style="display: none;">
+          <form>
+              <label for="username-login">Username:</label>
+              <input type="text" id="username-login" name="username" required />
+  
+              <label for="password-login">Password:</label>
+              <input type="password" id="password-login" name="password" required />
+  
+              <input type="submit" value="Login" />
+          </form>
+      </div>
+  
+      <div id="register-form" class="form-container" style="display: none;">
+          <form>
+              <label for="username-register">Username:</label>
+              <input type="text" id="username-register" name="username" required />
+  
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+  
+              <label for="password-register">Password:</label>
+              <input type="password" id="password-register" name="password" required />
+  
+              <input type="submit" value="Daftar" />
+          </form>
+      </div>
     </div>
     <footer>
-        <img src="assets/img/polibangLogo.png" alt="Logo Polibang" width="50">
-        <p>2023010028 | Moh. Rahsya Andika Putra | &copy; 2024</p>
+      <img src="assets/img/polibangLogo.png" alt="Logo Polibang" width="50" />
+      <p>2023010028 | Moh. Rahsya Andika Putra | &copy; 2024</p>
+
+      <script src="assets/js/script.js"></script>
     </footer>
-</body>
+  </body>
 </html>
