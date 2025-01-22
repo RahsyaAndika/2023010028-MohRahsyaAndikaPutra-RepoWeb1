@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "Baumans"; /* Ganti dengan nama font yang sesuai */
+  src: url("Baumans-Regular.ttf") format("truetype"); /* Ganti dengan nama file font yang sesuai */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Baumans", sans-serif; /* Ganti dengan nama font yang sesuai */
+}
+
+.footer-shadow {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-shadow::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust this value to control the shadow position */
+  left: 0;
+  right: 0;
+  height: 10px; /* Adjust this value to control the shadow height */
+  background: rgba(0, 0, 0, 0.1); /* Shadow color */
+  border-radius: 5px; /* Optional: to make the shadow edges rounded */
+  z-index: -1; /* Place the shadow behind the footer */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffff;
+  color: #393d43;
+}
+
+.nav-link {
+  color: #22252e;
+}
+
+.nav-link:hover {
+  color: #6c727c;
+}
+
+.product-section .product-item {
+  margin-bottom: 20px;
+}
+
+a.button-more-products {
+  padding: 10px 30px;
+  border: 1px solid green;
+  border-radius: 10px;
+  color: green;
+}
+
+a.button-more-products:hover {
+  padding: 10px 30px;
+  border: 1px solid #ffff;
+  border-radius: 10px;
+  color: #fff;
+  background-color: green;
+}
+
+a.category-link {
+  text-decoration: none;
+  color: #6c727c;
+  border: 2px solid #6c727c;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-right: 5px;
+}
+
+a.category-link:hover {
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #ffff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #6c727c;
+  margin-right: 5px;
+  transition: 0.3s;
+}
+
+footer li {
+  list-style-type: none;
+  color: #6c727c;
+}
+
+/* Single Product */
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  outline: inherit;
+  margin: 0 10px;
+}
+
+.button-border {
+  border: 1px solid green;
+  border-radius: 20px;
+  margin: 0 10px;
+}
+
+.input-quantity {
+  border: none;
+}
+
+/* Address Tab */
+
+.address-active {
+  background-color: #c9fde0;
+}
+
+/* Login */
+.form-control:focus {
+  border-color: #0ab30a;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(0, 255, 102, 0.6);
+}
+
+.notification-item-new:hover {
+  background-color: #f3f4f5;
+  cursor: pointer;
+}
+
+.notification-item-new {
+  background-color: #ebffef;
+}
