@@ -31,20 +31,87 @@ echo "<!DOCTYPE html>
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <title>Home</title>
+     <!-- google font -->
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link
+        href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap'
+        rel='stylesheet'>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' />
-    <link rel='stylesheet' href='fonts/style.css'>
+    <link rel='stylesheet' href='css/style.css'>
 </head>
 <body>
-    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class='container'>
-        <br>
-        <h1>Welcome Customer to Daycomp Percetakan!</h1>
-        <p>Hello, " . htmlspecialchars($fullName) . "!</p>
+        <h1 id='home' >Welcome Customer to Daycomp Percetakan!</h1>
+        <p >Hello, " . htmlspecialchars($fullName) . "!</p>
     </div>
     
+        <section class='certification' id='bestseller'>
+            <h1 style='color: white'>Best Seller</h1>
+            <div class='container-certificate'>
+                <div class='field-certificate'>
+                    <img src='img/undangan.jpeg' alt='' class='img-certificate' data-aos='zoom-in'>
+                    <i class='fa-solid fa-eye fa-xl icon-eye'></i>
+                    <div class='overlay-image-certificate'>
+                        <div class='field-overlay-certificate'>
+                            <i class='fa-solid fa-chevron-left fa-3x slide-before-image-certificate'></i>
+                            <img src='img/undangan.jpeg' alt='' class='img-certificate' id='overlay-image-certificate-1'>
+                            <i class='fa-solid fa-chevron-right fa-3x slide-after-image-certificate'></i>
+                            <button>Close</button>
+                        </div>
+                    </div>
+                </div>
+                <div class='field-certificate'>
+                    <img src='img/s2.png' alt='' class='img-certificate' data-aos='zoom-in'>
+                    <i class='fa-solid fa-eye fa-xl icon-eye'></i>
+                    <div class='overlay-image-certificate'>
+                        <div class='field-overlay-certificate'>
+                            <i class='fa-solid fa-chevron-left fa-3x slide-before-image-certificate'></i>
+                            <img src='img/s2.png' alt='' class='img-certificate' id='overlay-image-certificate-2'>
+                            <i class='fa-solid fa-chevron-right fa-3x slide-after-image-certificate'></i>
+                            <button>Close</button>
+                        </div>
+                    </div>
+                </div>
+                <div class='field-certificate'>
+                    <img src='img/s3.png' alt='' class='img-certificate' data-aos='zoom-in'>
+                    <i class='fa-solid fa-eye fa-xl icon-eye'></i>
+                    <div class='overlay-image-certificate'>
+                        <div class='field-overlay-certificate'>
+                            <i class='fa-solid fa-chevron-left fa-3x slide-before-image-certificate'></i>
+                            <img src='img/s3.png' alt='' class='img-certificate' id='overlay-image-certificate-3'>
+                            <i class='fa-solid fa-chevron-right fa-3x slide-after-image-certificate'></i>
+                            <button>Close</button>
+                        </div>
+                    </div>
+                </div>
+                <div class='field-certificate'>
+                    <img src='img/s4.png' alt='' class='img-certificate' data-aos='zoom-in'>
+                    <i class='fa-solid fa-eye fa-xl icon-eye'></i>
+                    <div class='overlay-image-certificate'>
+                        <div class='field-overlay-certificate'>
+                            <i class='fa-solid fa-chevron-left fa-3x slide-before-image-certificate'></i>
+                            <img src='img/s4.png' alt='' class='img-certificate' id='overlay-image-certificate-4'>
+                            <i class='fa-solid fa-chevron-right fa-3x slide-after-image-certificate'></i>
+                            <button>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
      <div class='container'>
         <br>
-        <h4 class='fw-bold'>Semua Produk</h4>
+        <h4 class='fw-bold' id='semuaproduk'>Semua Produk</h4>
         <div class='row'>";
 
 if ($result->num_rows > 0) {
@@ -67,10 +134,18 @@ if ($result->num_rows > 0) {
 
 echo "
         </div>
-    </div>
-    
+    </div> 
+<br>
+    <!-- AOS ANIMATION JAVASCRIPT -->
+    <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
+    <!-- AOS ANIMATION JAVASCRIPT -->
 
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'></script>";
+    <!-- SWEET ALERT -->
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+
+    <!-- MY SCRIPT -->
+    <script src='js/script.js'></script>
+    ";
 
 // Menyertakan footer.php
 include 'footer.php';

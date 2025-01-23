@@ -16,7 +16,11 @@ if (isset($_GET['id'])) {
     $sql = "SELECT * FROM products WHERE id = $id";
     $result = $conn->query($sql);
     $product = $result->fetch_assoc();
+} else {
+    die("Product ID not specified.");
 }
+
+include 'header_home.php';
 
 echo "
 <!DOCTYPE html>
@@ -28,14 +32,22 @@ echo "
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' />
 </head>
 <body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class='container'>
         <div class='row mt-3 justify-content-between'>
             <div class='col-lg-3'>
                 <figure class='figure'>
-                    <img src='" . $product['image'] . "' class='figure-img img-fluid rounded' alt='" . $product['name'] . "' />
+                    <img src='" . htmlspecialchars($product['image']) . "' class='figure-img img-fluid rounded' alt='" . htmlspecialchars($product['name']) . "' />
                 </figure>
             </div>
-                        <div class='col-lg-5 mb-3'>
+            <div class='col-lg-5 mb-3'>
                 <h5 class='text-uppercase'>" . htmlspecialchars($product['name']) . "</h5>
                 <h2 class='fw-bold'>Rp. " . number_format($product['price'], 2) . "</h2>
                 <nav>
@@ -53,17 +65,15 @@ echo "
                         " . htmlspecialchars($product['description']) . "
                     </div>
                     <div class='tab-pane fade mt-3' id='nav-profile' role='tabpanel' aria-labelledby='nav-profile-tab' tabindex='0'>
-                        <!-- Info Penting bisa ditambahkan di sini -->
                         <p>Informasi penting tentang produk ini.</p>
                     </div>
                 </div>
-                <!-- Nama Toko -->
                 <div class='row d-flex align-items-center justify-content-between'>
                     <div class='col-lg-2'>
-                        <img src='/img/nama_toko.jpg' alt='' style='width: 80px; height: 85px' />
+                        <img src='img/toko.png' alt='' style='width: 80px; height: 85px' />
                     </div>
                     <div class='col-lg'>
-                        <h5 class='fw-bold mb-0'>Toko Bagus</h5>
+                        <h5 class='fw-bold mb-0'>Daycomp Percetakan</h5>
                         <p class='text-secondary mt-0'>Online <span class='fw-bold'>26 Menit Lalu</span></p>
                     </div>
                     <div class='col-lg-2'>
@@ -71,7 +81,6 @@ echo "
                     </div>
                 </div>
                 <hr />
-                <!-- End Nama Toko -->
             </div>
             <div class='col-lg-3'>
                 <div class='card'>
@@ -92,7 +101,7 @@ echo "
                             </div>
                             <div class='d-flex justify-content-between'>
                                 <p class='text-secondary'>Subtotal</p>
-                                <h5 class='fw-bold'>Rp23.099.000</h5>
+                                <h5 class='fw-bold'>Rp. " . number_format($product['price'], 2) . "</h5>
                             </div>
                             <div class='row flex-column'>
                                 <a class='col-lg btn btn-success w-full text-white fw-bold mb-2' style='color: #098a4e'>+ Keranjang</a>
@@ -115,10 +124,41 @@ echo "
             </div>
         </div>
     </div>
-    
+    <br>
+    <div class='container'>
+    <h2> Produk Lainnya</h2>
+    <br>
+    <div class='row'>";
+
+// Fetch all products for catalog
+$sql_all = "SELECT * FROM products WHERE id != $id"; // Fetch all products except the current one
+$result_all = $conn->query($sql_all);
+
+if ($result_all->num_rows > 0) {
+    while($row = $result_all->fetch_assoc()) {
+        echo "
+        <div class='col-lg-3 mb-2'>
+            <div class='card'>
+                <img src='" . htmlspecialchars($row['image']) . "' class='card-img-top' alt='" . htmlspecialchars($row['name']) . "' />
+                <div class='card-body'>
+                    <h5 class='card-title'>" . htmlspecialchars($row['name']) . "</h5>
+                    <p class='card-text'>Rp. " . number_format($row['price'], 2) . "</p>
+                    <a href='detail_produk.php?id=" . $row['id'] . "' class='btn btn-primary'>Detail</a>
+                </div>
+            </div>
+        </div>";
+    }
+} else {
+    echo "<p>No other products found.</p>";
+}
+echo "
+    </div> 
+</div>
+<br>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'></script>
 </body>
 </html>";
 
+include 'footer.php';
 $conn->close();
 ?>

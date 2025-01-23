@@ -55,7 +55,13 @@ echo "
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' />
 </head>
 <body>
-    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class='container'>
         <br>
         <h1>Welcome Admin to the Home Page!</h1>
@@ -86,7 +92,7 @@ echo "
             <button type='submit' class='btn btn-primary'>Add Product</button>
         </form>
 
-        <h2>Product List</h2>
+        <h2>List Produk</h2>
         <div class='row'>";
         
         if ($result->num_rows > 0) {
@@ -98,8 +104,8 @@ echo "
                         <div class='card-body'>
                             <h5 class='card-title'>" . $row['name'] . "</h5>
                             <p class='card-text'>Rp. " . number_format($row['price'], 2) . "</p>
-                            <a href='view/edit_produk.php?id=" . $row['id'] . "' class='btn btn-warning'>Edit</a>
-                            <a href='view/delete_produk.php?id=" . $row['id'] . "' class='btn btn-danger'>Delete</a>
+                            <a href='edit_produk.php?id=" . $row['id'] . "' class='btn btn-warning'>Edit</a>
+                            <button class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#deleteModal' data-id='" . $row['id'] . "'>Delete</button>
                         </div>
                     </div>
                 </div>";
@@ -108,11 +114,44 @@ echo "
             echo "<p>No products found.</p>";
         }
 
-echo "
+        echo "
         </div>
     </div>
     
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'></script>";
+    <!-- Modal for confirmation -->
+    <div class='modal fade' id='deleteModal' tabindex='-1' aria-labelledby='deleteModalLabel' aria-hidden='true'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h5 class='modal-title' id='deleteModalLabel'>Konfirmasi Hapus Produk</h5>
+                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                </div>
+                <div class='modal-body'>
+                    Apakah anda ingin menghapus produk ini?
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Tidak</button>
+                    <button type='button' class='btn btn-danger' id='confirmDelete'>Ya</button>
+                </div>
+            </div>
+        </div>
+    </div>";
+
+echo "
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'></script>
+    <script>
+    let productId;
+    const deleteModal = document.getElementById('deleteModal');
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget; // Button that triggered the modal
+        productId = button.getAttribute('data-id'); // Extract info from data-* attributes
+    });
+
+    document.getElementById('confirmDelete').addEventListener('click', function() {
+        window.location.href = 'delete_produk.php?id=' + productId; // Redirect to delete script
+    });
+    </script>
+";
 
 // Include footer.php
 include 'footer.php';

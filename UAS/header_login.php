@@ -8,13 +8,14 @@
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Daycomp Percetakan</title>
 </head>
 <body>
-    <header class="bg-light p-3 shadow">
+    <header class=" shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-            <img src="img/LogoRpl.png" alt="Logo" class="mr-2" style="height: 100px;">
+            <img src="img/toko.png" alt="Logo" class="mr-2" style="height: 100px;">
                 <a href="index.php" style="text-decoration: none; color:black">
                 <h1>Daycomp Percetakan</h1>
                 </a>

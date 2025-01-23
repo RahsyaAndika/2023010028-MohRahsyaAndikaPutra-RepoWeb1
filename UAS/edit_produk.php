@@ -65,7 +65,13 @@ echo "
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' />
 </head>
 <body>
-    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class='container'>
         <h1>Edit Product</h1>
         <form action='' method='POST' enctype='multipart/form-data'>
@@ -93,6 +99,7 @@ echo "
             <button type='submit' class='btn btn-primary'>Update Product</button>
         </form>
     </div>
+    <br>
     
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'></script>";
 
