@@ -9,6 +9,9 @@ body {
   font-family: "Baumans", sans-serif; /* Ganti dengan nama font yang sesuai */
 }
 
+span{
+  color: rgb(94, 234, 212);
+}
 
 /* NAVBAR DESKTOP */
 header {

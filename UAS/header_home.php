@@ -92,35 +92,7 @@
                 aria-controls='project-tab-pane'
                 aria-selected='false'
             >
-                Proyek
-            </button>
-        </li>
-        <li class='nav-item' role='presentation'>
-            <button
-                class='nav-link fw-bold'
-                id='certification-tab'
-                data-bs-toggle='tab'
-                data-bs-target='#certification-tab-pane'
-                type='button'
-                role='tab'
-                aria-controls='certification-tab-pane'
-                aria-selected='false'
-            >
-                Sertifikasi
-            </button>
-        </li>
-        <li class='nav-item' role='presentation'>
-            <button
-                class='nav-link fw-bold'
-                id='contact-tab'
-                data-bs-toggle='tab'
-                data-bs-target='#contact-tab-pane'
-                type='button'
-                role='tab'
-                aria-controls='contact-tab-pane'
-                aria-selected='false'
-            >
-                Sosmed
+                <a href="#about">About</a>
             </button>
         </li>
     </ul>

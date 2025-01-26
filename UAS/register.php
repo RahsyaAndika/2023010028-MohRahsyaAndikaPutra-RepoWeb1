@@ -44,13 +44,7 @@ $conn->close();
 </head>
 <body>
     <?php include 'header_login.php'; ?> 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br><br>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5 mx-auto mt-5">

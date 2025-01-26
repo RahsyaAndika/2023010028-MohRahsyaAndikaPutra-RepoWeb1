@@ -1,10 +1,7 @@
 <?php session_start(); ?>
 <?php $title = 'Home'; ?>
 <?php include 'header_awal.php'; ?>
-<br>
-    <br>
-    <br>
-    <br>
+<br><br><br><br>
 <div class="container mt-5">
     <h1>Selamat Datang di Daycomp Percetakan</h1>
     <br>

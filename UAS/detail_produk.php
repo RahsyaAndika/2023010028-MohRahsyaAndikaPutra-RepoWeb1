@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
     die("Product ID not specified.");
 }
 
-include 'header_home.php';
+include 'header_detail.php';
 
 echo "
 <!DOCTYPE html>
@@ -32,14 +32,7 @@ echo "
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' />
 </head>
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br><br>
     <div class='container'>
         <div class='row mt-3 justify-content-between'>
             <div class='col-lg-3'>
@@ -50,6 +43,7 @@ echo "
             <div class='col-lg-5 mb-3'>
                 <h5 class='text-uppercase'>" . htmlspecialchars($product['name']) . "</h5>
                 <h2 class='fw-bold'>Rp. " . number_format($product['price'], 2) . "</h2>
+                <p class='text-uppercase'>" . htmlspecialchars($product['type']) . "</p>
                 <nav>
                     <div class='nav nav-tabs' id='nav-tab' role='tablist'>
                         <button class='nav-link fw-bold active' id='nav-home-tab' data-bs-toggle='tab' data-bs-target='#nav-home' type='button' role='tab' aria-controls='nav-home' aria-selected='true'>
@@ -76,9 +70,6 @@ echo "
                         <h5 class='fw-bold mb-0'>Daycomp Percetakan</h5>
                         <p class='text-secondary mt-0'>Online <span class='fw-bold'>26 Menit Lalu</span></p>
                     </div>
-                    <div class='col-lg-2'>
-                        <a class='btn btn-success fw-bold' href=''>Follow</a>
-                    </div>
                 </div>
                 <hr />
             </div>
@@ -90,13 +81,8 @@ echo "
                             <h6 class='mb-2 fw-light mt-3'>Non bundle</h6>
                             <hr />
                             <div class='row d-flex flex-row justify-content-start align-items-baseline text-center'>
-                                <div class='col-lg-5 col-5 d-flex align-items-center button-border'>
-                                    <button class='button-quantity'>-</button>
-                                    <input type='text' class='input-quantity w-full' style='width: 50%' />
-                                    <button class='button-quantity'>+</button>
-                                </div>
                                 <div class='col-lg col-5 d-flex mb-3 mt-2'>
-                                    <p>Stock: <span class='fw-bold'>60</span></p>
+                                    <p>Stock: <span class='fw-bold'>" . htmlspecialchars($product['type']) . "</span></p>
                                 </div>
                             </div>
                             <div class='d-flex justify-content-between'>
@@ -104,19 +90,7 @@ echo "
                                 <h5 class='fw-bold'>Rp. " . number_format($product['price'], 2) . "</h5>
                             </div>
                             <div class='row flex-column'>
-                                <a class='col-lg btn btn-success w-full text-white fw-bold mb-2' style='color: #098a4e'>+ Keranjang</a>
-                                <a class='col-lg btn btn-success w-full fw-bold mb-2' style='color: #098a4e; background-color: #fff'>Beli Langsung</a>
-                            </div>
-                            <div class='row justify-content-evenly'>
-                                <div class='col-lg-4 col-4'>
-                                    <span class='fw-bold' style='font-size: 12px'><i class='fa-solid fa-inbox'></i> Chat</span>
-                                </div>
-                                <div class='col-lg-4 col-4'>
-                                    <span class='fw-bold' style='font-size: 12px'><i class='fa-solid fa-heart'></i> Wishlist</span>
-                                </div>
-                                <div class='col-lg-4 col-4'>
-                                    <span class='fw-bold' style='font-size: 12px'><i class='fa-solid fa-share'></i> Share</span>
-                                </div>
+                                <a class='col-lg btn btn-success w-full text-white fw-bold mb-2' style='color: #098a4e'>Beli Langsung</a>
                             </div>
                         </div>
                     </div>

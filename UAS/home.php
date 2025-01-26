@@ -41,21 +41,14 @@ echo "<!DOCTYPE html>
     <link rel='stylesheet' href='css/style.css'>
 </head>
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br><br><br><br><br><br><br> 
     <div class='container'>
-        <h1 id='home' >Welcome Customer to Daycomp Percetakan!</h1>
-        <p >Hello, " . htmlspecialchars($fullName) . "!</p>
+        <h1 id='home' >Selamat Datang Customer di <span style='color: rgb(94, 234, 212)'>Daycomp Percetakan!</h1>
+        <p >Hello, <span style='color: rgb(94, 234, 212)'> " . htmlspecialchars($fullName) . "! </span></p>
     </div>
     
         <section class='certification' id='bestseller'>
-            <h1 style='color: white'>Best Seller</h1>
+            <h1 style='color: white'>Best <span style='color: rgb(94, 234, 212)'>Seller</span></h1>
             <div class='container-certificate'>
                 <div class='field-certificate'>
                     <img src='img/undangan.jpeg' alt='' class='img-certificate' data-aos='zoom-in'>
@@ -111,7 +104,7 @@ echo "<!DOCTYPE html>
 
      <div class='container'>
         <br>
-        <h4 class='fw-bold' id='semuaproduk'>Semua Produk</h4>
+        <h1 class='fw-bold' id='semuaproduk'>Semua <span style='color: rgb(94, 234, 212)'>Produk</span></h1>
         <div class='row'>";
 
 if ($result->num_rows > 0) {
@@ -136,6 +129,7 @@ echo "
         </div>
     </div> 
 <br>
+    <h1 id='about' >Selamat Datang Customer di <span style='color: rgb(94, 234, 212)'>Daycomp Percetakan!</h1>
     <!-- AOS ANIMATION JAVASCRIPT -->
     <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
     <!-- AOS ANIMATION JAVASCRIPT -->
