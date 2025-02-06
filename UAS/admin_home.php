@@ -55,13 +55,12 @@ echo "
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' />
 </head>
 <body>
-    <br><br><br><br><br>
+    <br><br><br><br><br><br>
     <div class='container'>
-        <br>
-        <h1>Selamat Datang Admin di Halaman Home!</h1>
+        <h1 id='beranda'>Selamat Datang Admin di Halaman Home!</h1>
         <p>Hello, admin " . htmlspecialchars($fullName) . "!</p>
         <br>
-        <h2>Tambah Produk Baru?</h2>
+        <h2 id='tambah'>Tambah Produk Baru?</h2>
         <form action='' method='POST' enctype='multipart/form-data'>
             <div class='mb-3'>
                 <label for='name' class='form-label'>Nama Produk</label>
@@ -99,8 +98,9 @@ echo "
                         <div class='card-body'>
                             <h5 class='card-title'>" . $row['name'] . "</h5>
                             <p class='card-text'>Rp. " . number_format($row['price'], 2) . "</p>
-                            <a href='edit_produk.php?id=" . $row['id'] . "' class='btn btn-warning'>Edit</a>
-                            <button class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#deleteModal' data-id='" . $row['id'] . "'>Hapus</button>
+                            <a href='edit_produk.php?id=" . $row['id'] . "' class='btn btn-warning' id='edit'>Edit</a>
+                            <a href='detail_produk.php?id=" . $row['id'] . "' class='btn btn-info' id='lihat'>Lihat</a>
+                            <button class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#deleteModal' data-id='" . $row['id'] . "' id='hapus'>Hapus</button>
                         </div>
                     </div>
                 </div>";

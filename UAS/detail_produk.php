@@ -90,7 +90,7 @@ echo "
                                 <h5 class='fw-bold'>Rp. " . number_format($product['price'], 2) . "</h5>
                             </div>
                             <div class='row flex-column'>
-                                <a class='col-lg btn btn-success w-full text-white fw-bold mb-2' style='color: #098a4e'>Beli Langsung</a>
+                                <a href=''class='col-lg btn btn-success w-full text-white fw-bold mb-2' style='color: #098a4e'>Beli Langsung</a>
                             </div>
                         </div>
                     </div>

@@ -52,9 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-// Include header_admin.php
-include 'header_admin.php';
-
 echo "
 <!DOCTYPE html>
 <html lang='en'>
@@ -65,7 +62,7 @@ echo "
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' />
 </head>
 <body>
-    <br><br><br><br><br>
+    <br>
     <div class='container'>
         <h1>Edit Produk</h1>
         <form action='' method='POST' enctype='multipart/form-data'>
@@ -90,7 +87,10 @@ echo "
                 <input type='file' class='form-control' name='image'>
                 <img src='" . $product['image'] . "' alt='Current Image' style='width: 100px; margin-top: 10px;'>
             </div>
-            <button type='submit' class='btn btn-primary'>Update Produk</button>
+            <div class='d-flex justify-content-between'>
+                <button type='submit' class='btn btn-primary'>Update Produk</button>
+                <a href='admin_home.php' class='btn btn-warning'>Kembali</a>
+            </div>
         </form>
     </div>
     <br>

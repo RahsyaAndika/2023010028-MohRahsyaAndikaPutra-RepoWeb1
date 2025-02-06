@@ -33,6 +33,80 @@
             </form>
             <p><a href='logout.php' class='btn btn-danger'>Logout</a></p>
         </div>
+        <div class='container mt-5 text-center'>
+    <ul class='nav nav-tabs' id='myTab' role='tablist'>
+        <li class='nav-item' role='presentation'>
+            <button
+                class='nav-link active fw-bold'
+                id='home-tab'
+                data-bs-toggle='tab'
+                data-bs-target='#home-tab-pane'
+                type='button'
+                role='tab'
+                aria-controls='home-tab-pane'
+                aria-selected='true'
+            >
+                <a href="#beranda">Beranda</a>
+            </button>
+        </li>
+        <li class='nav-item' role='presentation'>
+            <button
+                class='nav-link fw-bold'
+                id='about-tab'
+                data-bs-toggle='tab'
+                data-bs-target='#about-tab-pane'
+                type='button'
+                role='tab'
+                aria-controls='about-tab-pane'
+                aria-selected='false'
+            >
+                <a href="#tambah">Tambah Produk</a>
+            </button>
+        </li>
+        <li class='nav-item' role='presentation'>
+            <button
+                class='nav-link fw-bold'
+                id='skill-tab'
+                data-bs-toggle='tab'
+                data-bs-target='#skill-tab-pane'
+                type='button'
+                role='tab'
+                aria-controls='skill-tab-pane'
+                aria-selected='false'
+            >
+            <a href="#edit">Edit Produk</a>
+            </button>
+        </li>
+        <li class='nav-item' role='presentation'>
+            <button
+                class='nav-link fw-bold'
+                id='project-tab'
+                data-bs-toggle='tab'
+                data-bs-target='#project-tab-pane'
+                type='button'
+                role='tab'
+                aria-controls='project-tab-pane'
+                aria-selected='false'
+            >
+                <a href="#lihat">Lihat Produk</a>
+            </button>
+        </li>
+        <li class='nav-item' role='presentation'>
+            <button
+                class='nav-link fw-bold'
+                id='project-tab'
+                data-bs-toggle='tab'
+                data-bs-target='#project-tab-pane'
+                type='button'
+                role='tab'
+                aria-controls='project-tab-pane'
+                aria-selected='false'
+            >
+                <a href="#hapus">Hapus produk</a>
+            </button>
+        </li>
+    </ul>
+</div>
     </header>
 </body>
 </html>

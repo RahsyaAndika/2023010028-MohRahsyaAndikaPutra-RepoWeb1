@@ -41,14 +41,14 @@ echo "<!DOCTYPE html>
     <link rel='stylesheet' href='css/style.css'>
 </head>
 <body>
-    <br><br><br><br><br><br><br><br><br><br> 
+    <br><br><br><br><br><br><br><br>
     <div class='container'>
-        <h1 id='home' >Selamat Datang Customer di <span style='color: rgb(94, 234, 212)'>Daycomp Percetakan!</h1>
-        <p >Hello, <span style='color: rgb(94, 234, 212)'> " . htmlspecialchars($fullName) . "! </span></p>
+        <h1 id='home' >Selamat Datang Customer di <span>Daycomp Percetakan!</h1>
+        <p >Hello, <span> " . htmlspecialchars($fullName) . "! </span></p>
     </div>
     
         <section class='certification' id='bestseller'>
-            <h1 style='color: white'>Best <span style='color: rgb(94, 234, 212)'>Seller</span></h1>
+            <h1 style='color: white'>Best <span  style='color: rgb(94, 234, 212)'>Seller</span></h1>
             <div class='container-certificate'>
                 <div class='field-certificate'>
                     <img src='img/undangan.jpeg' alt='' class='img-certificate' data-aos='zoom-in'>
@@ -104,7 +104,7 @@ echo "<!DOCTYPE html>
 
      <div class='container'>
         <br>
-        <h1 class='fw-bold' id='semuaproduk'>Semua <span style='color: rgb(94, 234, 212)'>Produk</span></h1>
+        <h1 class='fw-bold' id='semuaproduk'>Semua <span>Produk</span></h1>
         <div class='row'>";
 
 if ($result->num_rows > 0) {
@@ -129,11 +129,15 @@ echo "
         </div>
     </div> 
 <br>
-    <h1 id='about' >Selamat Datang Customer di <span style='color: rgb(94, 234, 212)'>Daycomp Percetakan!</h1>
+    <div class='container'>
+        <h1 id='about' >Selamat Datang Customer di <span>Daycomp Percetakan!</h1>
+    </div>
     <!-- AOS ANIMATION JAVASCRIPT -->
     <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
     <!-- AOS ANIMATION JAVASCRIPT -->
-
+    <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>
     <!-- SWEET ALERT -->
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
 
