@@ -7,16 +7,7 @@ if (!isset($_SESSION['full_name']) || !isset($_SESSION['role'])) {
 
 $fullName = $_SESSION['full_name']; // Default to 'User  ' if full name is not set
 
-// Database connection
-$host = 'localhost'; // Ganti dengan host database Anda
-$db = 'user_management'; // Nama database
-$user = 'root'; // Ganti dengan username database Anda
-$pass = ''; // Ganti dengan password database Anda
-
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "db.php";
 
 // Fetch products for display
 $sql = "SELECT * FROM products";
@@ -41,61 +32,69 @@ echo "<!DOCTYPE html>
     <link rel='stylesheet' href='css/style.css'>
 </head>
 <body>
-    <br><br><br><br><br><br><br><br>
-    <div class='container'>
-        <h1 id='home' >Selamat Datang Customer di <span>Daycomp Percetakan!</h1>
-        <p >Hello, <span> " . htmlspecialchars($fullName) . "! </span></p>
+    <br><br><br><br><br>
+    <div class='hero-header'>
+        <div class='container my-5 py-5>
+            <div class='row align-items-center g-5'>
+                <div class='col-lg text-center text-lg-start mt-lg-5 mt-2 mb-5'>
+                    <h1 id='home' class='display-3 animated slideInLeft'>Selamat Datang Customer di <span>Daycomp Percetakan!</h1>
+                    <p class='animated slideInLeft mb-5 mt-5 pb-2'>Hello, <span> " . htmlspecialchars($fullName) . "! </span></p>
+                </div>
+            </div>
+        </div>
     </div>
     
         <section class='certification' id='bestseller'>
-            <h1 style='color: white'>Best <span  style='color: rgb(94, 234, 212)'>Seller</span></h1>
+            <h1 style='color: white'>Ter<span style='color: rgb(94, 234, 212)'>laris</span></h1>
             <div class='container-certificate'>
-                <div class='field-certificate'>
-                    <img src='img/undangan.jpeg' alt='' class='img-certificate' data-aos='zoom-in'>
+                <div class='field-certificate' onclick='showImage(\"overlay-1\")'>
+                    <img src='img/undangan.jpeg' alt='' class='img-certificate'>
                     <i class='fa-solid fa-eye fa-xl icon-eye'></i>
-                    <div class='overlay-image-certificate'>
-                        <div class='field-overlay-certificate'>
-                            <i class='fa-solid fa-chevron-left fa-3x slide-before-image-certificate'></i>
-                            <img src='img/undangan.jpeg' alt='' class='img-certificate' id='overlay-image-certificate-1'>
-                            <i class='fa-solid fa-chevron-right fa-3x slide-after-image-certificate'></i>
-                            <button>Close</button>
-                        </div>
+                </div>
+                <div class='overlay-image-certificate' id='overlay-1' style='display: none;'>
+                    <div class='field-overlay-certificate'>
+                        <img src='img/undangan.jpeg' alt='' class='img-certificate'>
+                        <button onclick='closeImage(\"overlay-1\")'>Close</button>
                     </div>
                 </div>
-                <div class='field-certificate'>
-                    <img src='img/s2.png' alt='' class='img-certificate' data-aos='zoom-in'>
+                <div class='field-certificate' onclick='showImage(\"overlay-2\")'>
+                    <img src='img/banner.png' alt='' class='img-certificate'>
                     <i class='fa-solid fa-eye fa-xl icon-eye'></i>
-                    <div class='overlay-image-certificate'>
-                        <div class='field-overlay-certificate'>
-                            <i class='fa-solid fa-chevron-left fa-3x slide-before-image-certificate'></i>
-                            <img src='img/s2.png' alt='' class='img-certificate' id='overlay-image-certificate-2'>
-                            <i class='fa-solid fa-chevron-right fa-3x slide-after-image-certificate'></i>
-                            <button>Close</button>
-                        </div>
+                </div>
+                <div class='overlay-image-certificate' id='overlay-2' style='display: none;'>
+                    <div class='field-overlay-certificate'>
+                        <img src='img/banner.png' alt='' class='img-certificate'>
+                        <button onclick='closeImage(\"overlay-2\")'>Close</button>
                     </div>
                 </div>
-                <div class='field-certificate'>
-                    <img src='img/s3.png' alt='' class='img-certificate' data-aos='zoom-in'>
+                <div class='field-certificate' onclick='showImage(\"overlay-3\")'>
+                    <img src='img/umbul.jpg' alt='' class='img-certificate'>
                     <i class='fa-solid fa-eye fa-xl icon-eye'></i>
-                    <div class='overlay-image-certificate'>
-                        <div class='field-overlay-certificate'>
-                            <i class='fa-solid fa-chevron-left fa-3x slide-before-image-certificate'></i>
-                            <img src='img/s3.png' alt='' class='img-certificate' id='overlay-image-certificate-3'>
-                            <i class='fa-solid fa-chevron-right fa-3x slide-after-image-certificate'></i>
-                            <button>Close</button>
-                        </div>
+                </div>
+                <div class='overlay-image-certificate' id='overlay-3' style='display: none;'>
+                    <div class='field-overlay-certificate'>
+                        <img src='img/umbul.jpg' alt='' class='img-certificate'>
+                        <button onclick='closeImage(\"overlay-3\")'>Close</button>
                     </div>
                 </div>
-                <div class='field-certificate'>
-                    <img src='img/s4.png' alt='' class='img-certificate' data-aos='zoom-in'>
+                <div class='field-certificate' onclick='showImage(\"overlay-4\")'>
+                    <img src='img/yasin.jpeg' alt='' class='img-certificate'>
                     <i class='fa-solid fa-eye fa-xl icon-eye'></i>
-                    <div class='overlay-image-certificate'>
-                        <div class='field-overlay-certificate'>
-                            <i class='fa-solid fa-chevron-left fa-3x slide-before-image-certificate'></i>
-                            <img src='img/s4.png' alt='' class='img-certificate' id='overlay-image-certificate-4'>
-                            <i class='fa-solid fa-chevron-right fa-3x slide-after-image-certificate'></i>
-                            <button>Close</button>
-                        </div>
+                </div>
+                <div class='overlay-image-certificate' id='overlay-4' style='display: none;'>
+                    <div class='field-overlay-certificate'>
+                        <img src='img/yasin.jpeg' alt='' class='img-certificate'>
+                        <button onclick='closeImage(\"overlay-4\")'>Close</button>
+                    </div>
+                </div>
+                 <div class='field-certificate' onclick='showImage(\"overlay-5\")'>
+                    <img src='img/amplop.jpeg' alt='' class='img-certificate'>
+                    <i class='fa-solid fa-eye fa-xl icon-eye'></i>
+                </div>
+                <div class='overlay-image-certificate' id='overlay-5' style='display: none;'>
+                    <div class='field-overlay-certificate'>
+                        <img src='img/amplop.jpeg' alt='' class='img-certificate'>
+                        <button onclick='closeImage(\"overlay-5\")'>Close</button>
                     </div>
                 </div>
             </div>
@@ -129,9 +128,37 @@ echo "
         </div>
     </div> 
 <br>
+<div class='container-fluid py-5' id='tentang-kami'>    
     <div class='container'>
-        <h1 id='about' >Selamat Datang Customer di <span>Daycomp Percetakan!</h1>
+        <div class='position-relative d-flex align-items-center justify-content-center mb-5'>
+            <h1 class='position-absolute text-uppercase text-luxury' id='about'>Ab<span>out</span></h1>
+        </div>
+        <div class='row align-items-center'>
+            <div class='col-lg-5'>
+                <img class='img-fluid rounded w-100' src='img/about-toko.jpeg' alt='Tentang Kami'>
+            </div>
+            <div class='col-lg-7'>
+                <h3 class='mb-4'>Tentang <span>Kami</span></h3>
+                <p>
+                    Daycomp Percetakan adalah penyedia layanan percetakan berkualitas tinggi yang menghadirkan berbagai solusi untuk kebutuhan cetak Anda. 
+                    Dengan pengalaman bertahun-tahun, kami berdedikasi untuk menciptakan produk yang tidak hanya estetis tetapi juga fungsional dan tahan lama. 
+                    Filosofi kami sederhana: percetakan bukan hanya barang, tetapi bagian dari cerita dan kehangatan bisnis Anda.
+                </p>
+                <p>
+                    Kami percaya bahwa setiap pelanggan adalah mitra kami. Oleh karena itu, kami selalu berusaha menghadirkan produk terbaik yang disesuaikan dengan kebutuhan Anda. 
+                    Dari desain minimalis hingga kompleks, Daycomp Percetakan adalah tempat di mana kreativitas bertemu dengan kualitas.
+                </p>
+                <div class='row mb-3'>
+                    <div class='col-sm-6 py-2'><h6>Nama Perusahaan: <span class='text-info'>Daycomp Percetakan</span></h6></div>
+                    <div class='col-sm-6 py-2'><h6>Berdiri Sejak Tahun: <span class='text-info'>2012</span></h6></div>
+                    <div class='col-sm-6 py-2'><h6>Lokasi: <span class='text-info'>Jl. srabi kidul Getassrabi, Gebog, Kudus, Jawa Tengah</span></h6></div>
+                    <div class='col-sm-6 py-2'><h6>Email: <span class='text-info'>daycomp@gmail.com</span></h6></div>
+                    <div class='col-sm-6 py-2'><h6>Nomor HP: <span class='text-info'>+62 859-7455-9988</span></h6></div>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
     <!-- AOS ANIMATION JAVASCRIPT -->
     <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
     <!-- AOS ANIMATION JAVASCRIPT -->
@@ -142,7 +169,21 @@ echo "
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
 
     <!-- MY SCRIPT -->
-    <script src='js/script.js'></script>
+    <script>
+    function showImage(id) {
+        document.getElementById(id).style.display = 'flex';
+        setTimeout(() => {
+            document.getElementById(id).style.transform = 'scale(1)';
+        }, 10);
+    }
+
+    function closeImage(id) {
+        document.getElementById(id).style.transform = 'scale(0)';
+        setTimeout(() => {
+            document.getElementById(id).style.display = 'none';
+        }, 300); // Waktu yang sama dengan transisi CSS
+    }
+</script>
     ";
 
 // Menyertakan footer.php

@@ -21,17 +21,10 @@
         </a>
     </div>
     <div class='search-container'>
-        <form role='search' class='d-flex'>
-            <input
-                class='form-control me-2'
-                type='search'
-                placeholder='Search'
-                aria-label='Search'
-            />
-            <button class='btn btn-outline-success' type='submit'>
-                Search
-            </button>
-        </form>
+            <form class="d-flex" role="search" action="search.php" method="get">
+                <input class="form-control me-2" type="search" name="keyword" placeholder="Cari produk" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Cari</button>
+            </form>
         <p class='logout-button'>
             <a href='logout.php' class='btn btn-danger'>Logout</a>
         </p>
@@ -64,7 +57,7 @@
                 aria-controls='about-tab-pane'
                 aria-selected='false'
             >
-                <a href="#bestseller">Best Seller</a>
+                <a href="#bestseller">Terlaris</a>
             </button>
         </li>
         <li class='nav-item' role='presentation'>

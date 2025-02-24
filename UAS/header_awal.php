@@ -22,8 +22,8 @@
                 </a>
             </div>
             <div>
-                <a href="login.php" class="btn btn-primary">Login</a>
-                <a href="register.php" class="btn btn-secondary">Daftar</a>
+                <a href="login.php" class="btn btn-light">Login</a>
+                <a href="register.php" class="btn btn-info">Daftar</a>
             </div>
         </div>
     </header>

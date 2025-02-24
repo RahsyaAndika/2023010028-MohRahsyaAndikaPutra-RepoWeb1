@@ -20,16 +20,9 @@
                 <h1> Daycomp Percetakan</h1>
                 </a>
             </div>
-            <form class="d-flex" role="search" class="w-full">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
+            <form class="d-flex" role="search" action="search.php" method="get">
+                <input class="form-control me-2" type="search" name="keyword" placeholder="Cari produk" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Cari</button>
             </form>
             <p><a href='logout.php' class='btn btn-danger'>Logout</a></p>
         </div>

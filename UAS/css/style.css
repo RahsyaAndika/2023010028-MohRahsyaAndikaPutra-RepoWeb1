@@ -9,6 +9,31 @@ body {
   font-family: "Baumans", sans-serif; /* Ganti dengan nama font yang sesuai */
 }
 
+.hero-header {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), 
+    url(../img/bg-toko.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 200px;
+  padding-bottom: 500px;
+}
+
+.hero-header h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white; 
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-header p {
+  font-size: 1.3rem;
+  color: white; 
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
 
 span{
   color: rgb(94, 234, 212);
@@ -94,6 +119,7 @@ a{
   text-decoration: none;
   
 }
+
 /* NAVBAR DESKTOP */
 
 .footer-shadow {
@@ -325,5 +351,29 @@ button {
 
 .overlay-image-certificate button:hover {
   cursor: pointer;
+}
+
+.container-fluid {
+  background-color: rgb(15, 23, 42);
+}
+
+.text-luxury {
+  font-size: 2.5rem; /* Ukuran font untuk judul */
+  color: white; /* Warna teks */
+}
+
+.img-fluid {
+  max-width: 100%; /* Memastikan gambar responsif */
+  height: auto; /* Memastikan tinggi gambar otomatis */
+  max-height: 300px; /* Batasi tinggi gambar agar tidak terlalu besar */
+}
+
+h3 {
+  font-size: 1.75rem; /* Ukuran font untuk subjudul */
+  color: white;
+}
+
+h6 {
+  font-size: 1rem; /* Ukuran font untuk informasi */
 }
 

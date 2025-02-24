@@ -7,16 +7,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 
 $fullName = $_SESSION['full_name'] ?? 'Admin'; // Default to 'Admin' if full name is not set
 
-// Database connection
-$host = 'localhost'; // Ganti dengan host database Anda
-$db = 'user_management'; // Nama database
-$user = 'root'; // Ganti dengan username database Anda
-$pass = ''; // Ganti dengan password database Anda
-
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "db.php";
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -55,9 +46,9 @@ echo "
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' />
 </head>
 <body>
-    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
     <div class='container'>
-        <h1 id='beranda'>Selamat Datang Admin di Halaman Home!</h1>
+        <h1 id='beranda'>Selamat Datang Admin di Dashboard!</h1>
         <p>Hello, admin " . htmlspecialchars($fullName) . "!</p>
         <br>
         <h2 id='tambah'>Tambah Produk Baru?</h2>
@@ -98,8 +89,8 @@ echo "
                         <div class='card-body'>
                             <h5 class='card-title'>" . $row['name'] . "</h5>
                             <p class='card-text'>Rp. " . number_format($row['price'], 2) . "</p>
-                            <a href='edit_produk.php?id=" . $row['id'] . "' class='btn btn-warning' id='edit'>Edit</a>
-                            <a href='detail_produk.php?id=" . $row['id'] . "' class='btn btn-info' id='lihat'>Lihat</a>
+                            <a href='view/edit_produk.php?id=" . $row['id'] . "' class='btn btn-warning' id='edit'>Edit</a>
+                            <a href='view/lihat_produk.php?id=" . $row['id'] . "' class='btn btn-info' id='lihat'>Lihat</a>
                             <button class='btn btn-danger' data-bs-toggle='modal' data-bs-target='#deleteModal' data-id='" . $row['id'] . "' id='hapus'>Hapus</button>
                         </div>
                     </div>
@@ -115,7 +106,7 @@ echo "
     
     <!-- Modal for confirmation -->
     <div class='modal fade' id='deleteModal' tabindex='-1' aria-labelledby='deleteModalLabel' aria-hidden='true'>
-    <br><br><br><br>
+    <br><br><br><br><br><br><br><br>
         <div class='modal-dialog'>
             <div class='modal-content'>
                 <div class='modal-header'>
@@ -145,7 +136,7 @@ echo "
     });
 
     document.getElementById('confirmDelete').addEventListener('click', function() {
-        window.location.href = 'delete_produk.php?id=' + productId; // Redirect to delete script
+        window.location.href = 'view/delete_produk.php?id=' + productId; // Redirect to delete script
     });
     </script>
 ";

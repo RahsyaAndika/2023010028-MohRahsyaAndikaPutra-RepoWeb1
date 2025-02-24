@@ -1,22 +1,13 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
 $fullName = $_SESSION['full_name'] ?? 'Admin'; // Default to 'Admin' if full name is not set
 
-// Database connection
-$host = 'localhost'; // Ganti dengan host database Anda
-$db = 'user_management'; // Nama database
-$user = 'root'; // Ganti dengan username database Anda
-$pass = ''; // Ganti dengan password database Anda
-
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "../db.php";
 
 // Fetch product for editing
 if (isset($_GET['id'])) {
@@ -45,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     $sql = "UPDATE products SET name='$name', price='$price', type='$type', description='$description', image='$image' WHERE id=$id";
     if ($conn->query($sql) === TRUE) {
-        header("Location: admin_home.php");
+        header("Location: ../admin_home.php");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
@@ -60,6 +51,7 @@ echo "
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <title>Edit Product</title>
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' />
+    <link rel='stylesheet' href='../css/style.css'>
 </head>
 <body>
     <br>
@@ -85,20 +77,17 @@ echo "
             <div class='mb-3'>
                 <label for='image' class='form-label'>Foto Produk</label>
                 <input type='file' class='form-control' name='image'>
-                <img src='" . $product['image'] . "' alt='Current Image' style='width: 100px; margin-top: 10px;'>
+                <img src='../" . $product['image'] . "' alt='Current Image' style='width: 100px; margin-top: 10px;'>
             </div>
             <div class='d-flex justify-content-between'>
                 <button type='submit' class='btn btn-primary'>Update Produk</button>
-                <a href='admin_home.php' class='btn btn-warning'>Kembali</a>
+                <a href='../admin_home.php' class='btn btn-warning'>Kembali</a>
             </div>
         </form>
     </div>
     <br>
     
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js'></script>";
-
-// Include footer.php
-include 'footer.php';
 
 echo "</body>
 </html>";

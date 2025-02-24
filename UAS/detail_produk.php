@@ -1,14 +1,5 @@
 <?php
-// Database connection
-$host = 'localhost'; // Ganti dengan host database Anda
-$db = 'user_management'; // Nama database
-$user = 'root'; // Ganti dengan username database Anda
-$pass = ''; // Ganti dengan password database Anda
-
-$conn = new mysqli($host, $user, $pass, $db);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include "db.php";
 
 // Fetch product details
 if (isset($_GET['id'])) {
@@ -90,7 +81,7 @@ echo "
                                 <h5 class='fw-bold'>Rp. " . number_format($product['price'], 2) . "</h5>
                             </div>
                             <div class='row flex-column'>
-                                <a href=''class='col-lg btn btn-success w-full text-white fw-bold mb-2' style='color: #098a4e'>Beli Langsung</a>
+                                <a href='https://wa.me/6285974559988?text=Halo%2C+saya+ingin+membeli+produk+" . htmlspecialchars($product['name']) . ".' class='col-lg btn btn-success w-full text-white fw-bold mb-2' style='color: #098a4e'>Beli Langsung</a>
                             </div>
                         </div>
                     </div>
